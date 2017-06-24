@@ -18,7 +18,11 @@ public class Order {
 
 	public Order(String code, byte priority) {
 		this.code = code;
-		this.priority = priority;
+		if (priority == 1 || priority == 2 || priority == 3) {
+			this.priority = priority;
+		} else {
+			throw new IllegalArgumentException("Invalid Order Priority -- Can only be an integer 1 - 3");
+		}
 	} 
 
 	public String getCode() {
